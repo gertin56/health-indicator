@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Slider))]
 public class HealthPointView : MonoBehaviour
 {
     private Slider _slider;
     private float _currentSliderValue;
     private float _newSliderValue;
-
-    private HealthPoints health;
+    private Coroutine _coroutine;
 
     private void OnEnable()
     {
@@ -20,18 +20,27 @@ public class HealthPointView : MonoBehaviour
     public void Render(HealthPoints healthPoints)
     {
         _newSliderValue = healthPoints.Health;
-        StartCoroutine(ChangeHealthBar(_currentSliderValue, _newSliderValue));
-        _currentSliderValue = _newSliderValue;
+        StartChange();
     }
 
-    private IEnumerator ChangeHealthBar(float currentValue, float targetValue)
+    private void StartChange()
+    {
+        if(_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+        }
+
+        _coroutine = StartCoroutine(ChangeHealthBar(_newSliderValue));
+    }
+
+    private IEnumerator ChangeHealthBar(float targetValue)
     {
         float delta = 3f;
 
-        while (currentValue != targetValue)
+        while (_currentSliderValue != targetValue)
         {
-            currentValue = Mathf.MoveTowards(currentValue, targetValue, delta * Time.deltaTime);
-            _slider.value = currentValue;
+            _currentSliderValue = Mathf.MoveTowards(_currentSliderValue, targetValue, delta * Time.deltaTime);
+            _slider.value = _currentSliderValue;
             yield return null;
         }
     }

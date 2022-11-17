@@ -209,7 +209,6 @@ GameObject:
   - component: {fileID: 212293641}
   - component: {fileID: 212293640}
   - component: {fileID: 212293639}
-  - component: {fileID: 212293642}
   m_Layer: 5
   m_Name: Decrease
   m_TagString: Untagged
@@ -282,14 +281,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 212293642}
-        m_TargetAssemblyTypeName: BattonHandler, Assembly-CSharp
+      - m_Target: {fileID: 1386682988}
+        m_TargetAssemblyTypeName: HealthPoints, Assembly-CSharp
         m_MethodName: Decrease
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -332,19 +331,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212293637}
   m_CullTransparentMesh: 1
---- !u!114 &212293642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 212293637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf6e1b91225d574289a3f0dc326015e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 920831887}
 --- !u!1 &562739513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1154,6 @@ GameObject:
   - component: {fileID: 1386682984}
   - component: {fileID: 1386682983}
   - component: {fileID: 1386682988}
-  - component: {fileID: 1386682987}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1255,18 +1240,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1386682987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386682982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4cba3fe2020bb44aae88554f975f25e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1386682988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,6 +1252,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a36a77db0430154b8d09d793e269210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 920831888}
+        m_TargetAssemblyTypeName: HealthPointView, Assembly-CSharp
+        m_MethodName: Render
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1386682988}
+          m_ObjectArgumentAssemblyTypeName: HealthPoints, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1429114665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1279,6 @@ GameObject:
   - component: {fileID: 1429114669}
   - component: {fileID: 1429114668}
   - component: {fileID: 1429114667}
-  - component: {fileID: 1429114670}
   m_Layer: 5
   m_Name: Increace
   m_TagString: Untagged
@@ -1364,14 +1351,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1429114670}
-        m_TargetAssemblyTypeName: BattonHandler, Assembly-CSharp
-        m_MethodName: Increace
-        m_Mode: 1
+      - m_Target: {fileID: 1386682988}
+        m_TargetAssemblyTypeName: HealthPoints, Assembly-CSharp
+        m_MethodName: Increase
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1414,19 +1401,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429114665}
   m_CullTransparentMesh: 1
---- !u!114 &1429114670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429114665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf6e1b91225d574289a3f0dc326015e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 920831887}
 --- !u!1 &1479478630
 GameObject:
   m_ObjectHideFlags: 0
